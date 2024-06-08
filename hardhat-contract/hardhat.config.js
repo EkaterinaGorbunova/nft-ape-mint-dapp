@@ -5,9 +5,8 @@ require('dotenv').config();
 const {
   ALCHEMY_POLYGON_AMOY_URL,
   METAMASK_ACCOUNT_PRIVATE_KEY,
-  ETHERSCAN_API,
+  POLYGONSCAN_AMOY_API_KEY,
 } = process.env;
-
 
 module.exports = {
   defaultNetwork: 'hardhat',
@@ -16,16 +15,31 @@ module.exports = {
       chainId: 1337,
     },
     polygon_amoy: {
-      // Alchemy endpoint url
+      // Alchemy endpoint URL
       url: ALCHEMY_POLYGON_AMOY_URL || '',
-      // Metamask account private key
+      // Metamask account Private Key
       accounts: METAMASK_ACCOUNT_PRIVATE_KEY !== undefined ? [METAMASK_ACCOUNT_PRIVATE_KEY] : [],
     },
   },
-  // // Etherscan API Key to verify contract
-  // etherscan: {
-  //   apiKey: ETHERSCAN_API,
-  // },
+  // Verify smart contract
+  etherscan: {
+    apiKey: {
+      polygon_amoy: POLYGONSCAN_AMOY_API_KEY,
+    },
+    customChains: [
+      {
+        network: "polygon_amoy",
+        chainId: 80002,
+        urls: {
+          apiURL: "https://api-amoy.polygonscan.com/api",
+          browserURL: "https://amoy.polygonscan.com"
+        },
+      }
+    ]
+  },
+  sourcify: {
+    enabled: true
+  },
   solidity: {
     version: '0.8.24',
     settings: {
