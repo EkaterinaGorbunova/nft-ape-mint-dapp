@@ -1,5 +1,13 @@
 # NFT DApp using HardHat and NextJS 15
 
+### NFT Minting Project
+
+**NFTs in this project are not real or special**. They are taken from [freepik.com](https://www.freepik.com), a website with  standard digital content. So, these NFTs don't have any real value or uniqueness.
+
+I grabbed 30 NFTs from [freepik.com](https://www.freepik.com) and made 1000 copies (images and matadata) with a Python script. This was just to make sure I had enough for testing during the NFT minting process. The duplicates do not add any value or rarity.
+
+This project focuses specifically on NFT minting functionality.
+
 ## Project Logic
 1. Create Solidity Smart Contract
 2. Deploy Smart Contract to Polygon Amoy Testnet
