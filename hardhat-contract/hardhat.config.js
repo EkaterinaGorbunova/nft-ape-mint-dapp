@@ -1,6 +1,5 @@
-require('@nomicfoundation/hardhat-toolbox');
 require('dotenv').config();
-// require('@nomiclabs/hardhat-etherscan');
+require('@nomicfoundation/hardhat-toolbox');
 
 const {
   ALCHEMY_POLYGON_AMOY_URL,
