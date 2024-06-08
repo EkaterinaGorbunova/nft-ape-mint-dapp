@@ -1,6 +1,6 @@
 const hre = require("hardhat");
 
-const baseTokenURI = "ipfs://QmQ9P4Uph6TGsBuzmQADxkjsqTNgpHMyt1vAX1yNNArTQj/"
+const baseTokenURI = "ipfs://QmbgBAom6sydhuLEAjMvzA2aLLsyCXUMFHxEhH4NEe8xiU/" // uri to metadata
 
 async function main() {
 
