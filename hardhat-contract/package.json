@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy_polygon_amoy": "npx hardhat run ignition/modules/deploy.js --network polygon_amoy",
+    "deploy_localhost": "npx hardhat run ignition/modules/deploy.js --network localhost",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +16,9 @@
     "hardhat": "^2.22.5"
   },
   "dependencies": {
-    "solc": "^0.8.19"
+    "@openzeppelin/contracts": "^4.9.3",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.0",
+    "solc": "^0.8.24"
   }
 }
