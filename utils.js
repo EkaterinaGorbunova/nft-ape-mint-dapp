@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import { apePolygonAmoyAddress } from './contractAddresses';
-import ApeNotReal from '../hardhat-contract/artifacts/contracts/ApeNotReal.sol/ApeNotReal.json';
+import ApeNotReal from './hardhat-contract/artifacts/contracts/ApeNotReal.sol/ApeNotReal.json';
 
 // Function to initialize ethers provider
 async function initializeProvider() {

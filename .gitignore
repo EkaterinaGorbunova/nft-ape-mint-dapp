@@ -35,4 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-README.md
+app_creating.md
+
+.vercel
