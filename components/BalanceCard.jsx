@@ -14,7 +14,6 @@ const BalanceCard = (props) => {
             {props.itemBalance}
           </div>
         </div>
-        <div className={props.networkDotIndicator}></div>
       </div>
     </>
   );

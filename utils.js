@@ -3,7 +3,7 @@ import { apePolygonAmoyAddress } from './contractAddresses';
 import ApeNotReal from './hardhat-contract/artifacts/contracts/ApeNotReal.sol/ApeNotReal.json';
 
 // Function to initialize ethers provider
-async function initializeProvider() {
+export async function initializeProvider() {
   try {
     if (typeof window.ethereum === 'undefined') {
       throw new Error('MetaMask is not installed. Please consider installing it: https://metamask.io/download.html');
@@ -44,7 +44,6 @@ export async function connectWallet() {
       provider,
       networkName: network.name,
       ethBalance: parseFloat(formattedEthBalance),
-      networkDotIndicator: 'my-auto w-2.5 h-2.5 bg-teal-500 rounded-full',
       apeNotRealAvs: nft.apeNotRealAvs,
       itemBalance: nft.itemBalance
     };
@@ -117,7 +116,6 @@ export async function mint() {
     throw error;
   }
 }
-
 
 // export async function connectWallet() {
 //   if (typeof window.ethereum !== 'undefined') {

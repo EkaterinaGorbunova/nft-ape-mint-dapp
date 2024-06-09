@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { connectWallet, mint } from '../utils';
+import { connectWallet, mint, checkNFTBalanceAndFetchMetadata, initializeProvider } from '../utils';
 import { Spiner } from '@/components/Spiner';
 import ButtonConnectWallet from '../components/ButtonConnectWallet';
 import ButtonMint from '../components/ButtonMint';
@@ -13,7 +13,6 @@ export default function Home() {
   const [ethBalance, setEthBalance] = useState(0);
   const [itemBalance, setItemBalance] = useState(0);
 
-  const [networkDotIndicator, setNetworkDotIndicator] = useState('my-auto w-2.5 h-2.5 bg-red-500 rounded-full');
   const [loading, setLoading] = useState(false);
 
   async function handleConnectWallet() {
@@ -26,12 +25,28 @@ export default function Home() {
       setEthBalance(walletData.ethBalance);
       setItemBalance(walletData.itemBalance);
       setApeNotRealAvs(walletData.apeNotRealAvs);
-      setNetworkDotIndicator(walletData.networkDotIndicator);
     }
   }
 
+  // async function handleMintNft() {
+  //   await mint();
+  // }
+
   async function handleMintNft() {
+    setLoading(true);
     await mint();
+
+    // Re-fetch NFT data after minting
+    try {
+      const provider = await initializeProvider();
+      const nftData = await checkNFTBalanceAndFetchMetadata(provider, userEthAddress);
+      setApeNotRealAvs(nftData.apeNotRealAvs);
+      setItemBalance(nftData.itemBalance);
+    } catch (error) {
+      console.error('Error updating NFT data:', error);
+    }
+    
+    setLoading(false);
   }
 
   return (
@@ -45,7 +60,6 @@ export default function Home() {
         <div className='flex-col flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full'>
           <BalanceCard
             ethBalance={ethBalance}
-            networkDotIndicator={networkDotIndicator}
             itemBalance={itemBalance}
           />
           <div>
