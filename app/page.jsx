@@ -13,13 +13,13 @@ export default function Home() {
   const [ethBalance, setEthBalance] = useState(0);
   const [itemBalance, setItemBalance] = useState(0);
 
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleConnectWallet() {
-    setLoading(true);
+    setIsLoading(true);
     const walletData = await connectWallet();
     console.log('walletData:', walletData)
-    setLoading(false);
+    setIsLoading(false);
     if (walletData) {
       setUserEthAddress(walletData.currentWalletAddress);
       setEthBalance(walletData.ethBalance);
@@ -27,13 +27,8 @@ export default function Home() {
       setApeNotRealAvs(walletData.apeNotRealAvs);
     }
   }
-
-  // async function handleMintNft() {
-  //   await mint();
-  // }
-
+  
   async function handleMintNft() {
-    setLoading(true);
     await mint();
 
     // Re-fetch NFT data after minting
@@ -45,8 +40,6 @@ export default function Home() {
     } catch (error) {
       console.error('Error updating NFT data:', error);
     }
-    
-    setLoading(false);
   }
 
   return (
@@ -79,7 +72,7 @@ export default function Home() {
             ) : null}
           </div>      
 
-          {loading && (
+          {isLoading && (
             <div className='my-4'>
               <Spiner />
             </div>

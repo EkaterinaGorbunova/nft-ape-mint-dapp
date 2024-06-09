@@ -28,10 +28,8 @@ export async function connectWallet() {
       return null;
     }
 
-    // const signer = provider.getSigner();
-    // const currentWalletAddress = await signer.getAddress();
-      const [currentWalletAddress] = await window.ethereum.request({
-      method: 'eth_requestAccounts',
+    const [currentWalletAddress] = await window.ethereum.request({
+    method: 'eth_requestAccounts',
     });
 
     const ethBalance = await provider.getBalance(currentWalletAddress);
