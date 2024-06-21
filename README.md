@@ -1,4 +1,4 @@
-# NFT DApp using Next.js 15, React 19 with Solidity Smart Contract deployed on the Polygon Amoy Testnet
+# NFT DApp using Next.js 15, React 19, Solidity Smart Contract deployed on the Polygon Amoy Testnet
 
 ### NFT Minting Project
 
