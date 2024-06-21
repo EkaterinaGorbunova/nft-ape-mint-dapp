@@ -1,4 +1,4 @@
-# NFT DApp using HardHat and NextJS 15
+# NFT DApp using Next.js 15/React 19 with Solidity Smart Contract deployed on the Polygon Mumbai Testnet
 
 ### NFT Minting Project
 
