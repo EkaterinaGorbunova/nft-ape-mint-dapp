@@ -51,10 +51,10 @@ export default function Home() {
         </h1>
 
         <ul className='mt-4 list-decimal text-left'>
-  <li>Connect MetaMask to Polygon Amoy Testnet</li>
-  <li>Mint NFT</li>
-  <li>View NFT on this page</li>
-</ul>
+          <li>Connect MetaMask to Polygon Amoy Testnet</li>
+          <li>Mint NFT</li>
+          <li>View NFT on this page</li>
+        </ul>
 
         <div className='flex-col flex-wrap items-center justify-around max-w-4xl my-4 sm:w-full'>
           <BalanceCard
