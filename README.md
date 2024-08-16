@@ -1,4 +1,4 @@
-# NFT DApp using HardHat and NextJS 15
+# NFT DApp using Next.js 15, React 19, Solidity Smart Contract deployed on the Polygon Amoy Testnet
 
 ### NFT Minting Project
 
@@ -24,7 +24,7 @@ This project focuses specifically on NFT minting functionality.
 5. Alchemy
 6. Pinata IPFS
 7. NFT ERC721 token
-8. Frontend: [NextJS 15](https://nextjs.org/blog/next-15-rc) + Tailwind CSS
+8. Frontend: [NextJS 15](https://nextjs.org/blog/next-15-rc) + Tailwind CSS (in progress)
 
 ## Resources
 
